@@ -11,4 +11,4 @@ irm "https://github.com/NL-Cristi/PsProfile/raw/main/setup.ps1" | iex
 
 extract the downloaded `cove.zip` that is in the folder you ran the script from and install the nerd fonts. 
   
-### Copy of https://github.com/NL-Cristi/PsProfile
+### Copy of https://github.com/ChrisTitusTech/powershell-profile
