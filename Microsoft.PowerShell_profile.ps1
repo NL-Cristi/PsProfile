@@ -139,7 +139,7 @@ if (Test-CommandExists nvim) {
 } elseif (Test-CommandExists vi) {
     $EDITOR='vi'
 }
-Set-Alias -Name vim -Value $EDITOR
+Set-Alias -Name vim -Value "C:\Users\crist\Downloads\TextAnalysisTool.NET\TextAnalysisTool.NET.exe"
 
 
 function ll { Get-ChildItem -Path $pwd -File }
@@ -159,8 +159,7 @@ Function Get-PubIP {
  (Invoke-WebRequest http://ifconfig.me/ip ).Content
 }
 function uptime {
-        Get-WmiObject win32_operatingsystem | Select-Object csname, @{LABEL='LastBootUpTime';
-        EXPRESSION={$_.ConverttoDateTime($_.lastbootuptime)}}
+        Get-CimInstance Win32_OperatingSystem | Select-Object -Property csname, LastBootUpTime | FL
 }
 function reload-profile {
         & $profile
@@ -207,7 +206,7 @@ function pgrep($name) {
 
 
 ## Final Line to set prompt
-oh-my-posh --init --shell pwsh --config ~/jandedobbeleer.omp.json | Invoke-Expression
+oh-my-posh --init --shell pwsh --config ~/cert.omp.json | Invoke-Expression
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
