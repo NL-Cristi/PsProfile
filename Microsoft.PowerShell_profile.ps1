@@ -86,11 +86,11 @@ function admin
     if ($args.Count -gt 0)
     {   
        $argList = "& '" + $args + "'"
-       Start-Process "$psHome\powershell.exe" -Verb runAs -ArgumentList $argList
+       Start-Process wt -Verb runAs -ArgumentList $argList
     }
     else
     {
-       Start-Process "$psHome\powershell.exe" -Verb runAs
+       Start-Process wt -Verb runAs
     }
 }
 
@@ -206,7 +206,7 @@ function pgrep($name) {
 
 
 ## Final Line to set prompt
-oh-my-posh --init --shell pwsh --config ~/cert.omp.json | Invoke-Expression
+oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/tokyo.omp.json' | Invoke-Expression
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
